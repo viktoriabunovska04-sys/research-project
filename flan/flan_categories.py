@@ -6,11 +6,10 @@ group, dominance, explicit reference, and consequences.
 """
 
 import pandas as pd
-from src.eval_metrics_utils import compute_recall, compute_precision, compute_f1
-from src.eval_flips_utils import compute_flip_stats
+from utils.eval_metrics_utils import compute_recall, compute_precision, compute_f1
+from utils.eval_flips_utils import compute_flip_stats
 from IPython.display import display
-from src.general_utils import load_results
-import webbrowser
+from utils.general_utils import load_results
 
 datasets = load_results(f"results/predictions_flan", "flan")
 dataset_own_results = datasets["No definition"]
@@ -134,10 +133,9 @@ def evaluate_consequences(dataset_own, dataset_given, consequence_type, definiti
 
 
 # ----- Run Evaluations----------
-def save_and_open(results, filename):
+def save(results, filename):
     df = pd.DataFrame(results)
     df.to_html(filename)
-    webbrowser.open(filename)
 
 # Gender
 gender_results = [
@@ -164,10 +162,10 @@ discrimination_results = [
 ]
 
 
-save_and_open(gender_results, "results/tables/gender_results.html")
-save_and_open(dominance_general_results, "results/tables/dominance_general_results.html")
-save_and_open(stereotype_results, "results/tables/stereotype_results.html")
-save_and_open(discrimination_results, "results/tables/discrimination_results.html")
+save(gender_results, "results/tables/gender_results.html")
+save(dominance_general_results, "results/tables/dominance_general_results.html")
+save(stereotype_results, "results/tables/stereotype_results.html")
+save(discrimination_results, "results/tables/discrimination_results.html")
 
 
 

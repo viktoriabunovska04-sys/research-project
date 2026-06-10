@@ -5,9 +5,8 @@ samples with beneficial definition-induced flips, and assembles a small sample
 of cases for qualitative comparison.
 """
 
-from src.general_utils import load_results
+from utils.general_utils import load_results
 import pandas as pd
-import webbrowser
 
 results_flan = load_results(f"results/predictions_flan", "flan")
 results_qwen = load_results(f"results/predictions_qwen", "qwen")
@@ -115,6 +114,3 @@ qwen_samples = pick_random_gender_flips(datasets_qwen, names, sample_indices, "q
 
 flan_samples.to_html("results/tables/flan_samples.html")
 qwen_samples.to_html("results/tables/qwen_samples.html")
-
-webbrowser.open("results/tables/flan_samples.html")
-webbrowser.open("results/tables/qwen_samples.html")

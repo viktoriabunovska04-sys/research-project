@@ -10,7 +10,7 @@ from tqdm.auto import tqdm
 import pandas as pd
 from transformers import GenerationConfig
 import torch
-from src.definitions import DEFINITIONS
+from utils.definitions import DEFINITIONS
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 

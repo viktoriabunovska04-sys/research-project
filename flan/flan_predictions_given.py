@@ -2,7 +2,7 @@ import torch
 from tqdm.auto import tqdm
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-from src.definitions import DEFINITIONS
+from utils.definitions import DEFINITIONS
 
 """FLAN hate speech classification script.
 

@@ -8,7 +8,7 @@ that compare FLAN and Qwen behavior.
 
 import matplotlib.pyplot as plt
 import numpy as np
-from src.general_utils import load_results
+from utils.general_utils import load_results
 
 results_flan = load_results(f"results/flan", "flan")
 results_qwen = load_results(f"results/qwen", "qwen")

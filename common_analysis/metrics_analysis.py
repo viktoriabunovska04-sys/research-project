@@ -11,10 +11,9 @@ and given-definition predictions.
 
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-from src.eval_metrics_utils import compute_accuracy, compute_recall, compute_precision, compute_false_positives, compute_f1
-from src.general_utils import load_results
-import webbrowser
+# from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from utils.eval_metrics_utils import compute_accuracy, compute_recall, compute_precision, compute_false_positives, compute_f1
+from utils.general_utils import load_results
 
 # choose which model you want to see flip analysis for
 MODEL = "flan"
@@ -108,7 +107,6 @@ for name, dataset in datasets:
 
 results_table = pd.DataFrame(rows).round(4)
 results_table.to_html("results/tables/results_table.html")
-webbrowser.open("results/tables/results_table.html")
 
 
 #--------Confusion Matrices-------#

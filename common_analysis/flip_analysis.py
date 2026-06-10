@@ -6,9 +6,8 @@ against a baseline "No definition" prediction set.
 """
 
 import pandas as pd
-from src.eval_flips_utils import compute_flip_stats
-from src.general_utils import load_results
-import webbrowser
+from utils.eval_flips_utils import compute_flip_stats
+from utils.general_utils import load_results
 
 # choose which model you want to see flip analysis for
 MODEL="flan"
@@ -135,4 +134,3 @@ flip_table = pd.DataFrame({
 
 flip_table["Flip Rate"] = flip_table["Flip Rate"].round(4)
 flip_table.to_html("results/tables/flip_table.html")
-webbrowser.open("results/tables/flip_table.html")
