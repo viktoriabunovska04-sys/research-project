@@ -3,7 +3,8 @@
 ![Python](https://img.shields.io/badge/python-3.12+-blue)
 
 This repository contains code for analyzing how different hate speech definitions
-affect Flan-T5 and Qwen model predictions on the extended version of the HateCheck dataset.
+affect Flan-T5 and Qwen model predictions on the extended version of the HateCheck dataset. It has been created for the course
+CSE3000 Research Project at the TU Delft.
 
 It includes:
 
