@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from utils.general_utils import load_results
 
-results_flan = load_results(f"results/flan", "flan")
-results_qwen = load_results(f"results/qwen", "qwen")
+results_flan = load_results(f"results/predictions_flan", "flan")
+results_qwen = load_results(f"results/predictions_qwen", "qwen")
 
 dataset_bulgaria_results_flan = results_flan["Bulgaria"]
 dataset_croatia_results_flan = results_flan["Croatia"]
@@ -37,7 +37,7 @@ datasets_flan = [dataset_bulgaria_results_flan, dataset_croatia_results_flan, da
 datasets_qwen = [dataset_bulgaria_results_qwen, dataset_croatia_results_qwen, dataset_meta_results_qwen, 
            dataset_reddit_results_qwen, dataset_theoretical_incl_results_qwen, dataset_theoretical_incl_excl_results_qwen]
 
-names = ["Bulgaria", "Croatia", "Meta", "Reddit", "Theoretic I", "Theoretic I+E"]
+names = ["Bulgaria", "Croatia", "Meta", "Reddit", "Theoretical I", "Theoretical I+E"]
 
 
 
@@ -230,7 +230,7 @@ def heatmap_rates(rates_beneficial_flan, rates_beneficial_qwen, rates_harmful_fl
         for i in range(len(definition_names)):
             for j in range(len(cats)):
                 ax.text(j, i, f"{matrix[i, j]:.2f}", ha="center", va="center",
-                        fontsize=9, color="white" if matrix[i, j] > vmax * 0.6 else "black")
+                        fontsize=14, color="white" if matrix[i, j] > vmax * 0.6 else "black")
 
 
     plt.subplots_adjust(hspace=0.7,wspace=0.3)
@@ -267,7 +267,7 @@ def heatmap_beneficial_rates(rates_beneficial_flan, rates_beneficial_qwen, categ
 
     vmax = max(mat_ben_flan.max(), mat_ben_qwen.max())
 
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+    fig, axes = plt.subplots(1, 2, figsize=(18, 5))
     fig.suptitle(f"Beneficial flip distribution by {component} for Flan (left) and Qwen (right)", fontsize=14)
 
     panels = [
@@ -277,20 +277,22 @@ def heatmap_beneficial_rates(rates_beneficial_flan, rates_beneficial_qwen, categ
 
     for ax, matrix, title in panels:
         im = ax.imshow(matrix, aspect="auto", vmin=0, vmax=vmax, cmap="Blues")
-        ax.set_title(title, fontsize=12)
+        ax.set_title(title, fontsize=14)
         ax.set_xticks(range(len(categories)))
-        ax.set_xticklabels(categories, rotation=45, ha="right", fontsize=12)
+        ax.set_xticklabels(categories, rotation=45, ha="right", fontsize=14)
         ax.set_yticks(range(len(definition_names)))
-        ax.set_yticklabels(definition_names, fontsize=12)
+        ax.set_yticklabels(definition_names, fontsize=14)
 
         for i in range(len(definition_names)):
             for j in range(len(categories)):
                 ax.text(j, i, f"{matrix[i, j]:.2f}", ha="center", va="center",
-                        fontsize=12, color="white" if matrix[i, j] > vmax * 0.6 else "black")
+                        fontsize=17, color="white" if matrix[i, j] > vmax * 0.6 else "black")
 
     fig.subplots_adjust(right=0.88)
     cbar_ax = fig.add_axes([0.91, 0.15, 0.02, 0.7])
-    fig.colorbar(im, cax=cbar_ax, label="rate")
+    cbar = fig.colorbar(im, cax=cbar_ax)
+    cbar.set_label("Rate", fontsize=16)
+    cbar.ax.tick_params(labelsize=14)
     plt.subplots_adjust(hspace=0.6,wspace=0.4)
     plt.savefig(
         f"results/distributions/beneficial/heatmap_beneficial_{component}.png",
