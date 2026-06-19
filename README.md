@@ -156,8 +156,9 @@ python -m qwen/qwen_predictions_own.py
 python -m qwen/qwen_predictions_given.py
 ```
 
-⚠️ Note: These scripts require access to HuggingFace models and may require GPU support. For this project, these files were executed in Kaggle with their GPU-T4. More about the setup can be read here: https://huggingface.co/docs/transformers/en/quicktour
-https://www.kaggle.com/discussions/product-feedback/114053
+⚠️ Note: These scripts require access to HuggingFace models and may require GPU support. For this project, these files were executed in Kaggle with their GPU-T4. More about the setup can be read here: 
+* https://huggingface.co/docs/transformers/en/quicktour
+* https://www.kaggle.com/discussions/product-feedback/114053
 
 ### Step 3: Evaluation and analysis
 
