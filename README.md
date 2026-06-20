@@ -30,12 +30,21 @@ This project investigates how variations in hate speech definitions affect model
 ### Data processing
 
 - `relabelling.py`  
-  Applies definition-specific labeling rules to the HateCheck dataset for:
+  Applies definition-specific labeling rules to the extended HateCheck dataset for:
   - Bulgaria
   - Croatia
   - Meta
   - Reddit
   - Theoretical definitions
+
+### Datasets
+The relabeled datasets used in this project can be found in `data/`. The dataset used for this project is the extended version of HateCheck proposed by Khurana et al. (2025). References for both the extended and original HateCheck datasets are provided below:
+
+- **Extended HateCheck** \
+Khurana, U., Nalisnick, E., & Fokkens, A. (2025). DefVerify: Do Hate Speech Models Reflect Their Dataset's Definition? In Proceedings of COLING 2025, pp. 4341–4358. Available at: https://aclanthology.org/2025.coling-main.293/
+
+- **HateCheck** \
+Röttger, P., Vidgen, B., Nguyen, D., Waseem, Z., Margetts, H., & Pierrehumbert, J. (2021). HateCheck: Functional Tests for Hate Speech Detection Models. In Proceedings of ACL-IJCNLP 2021, pp. 41–58. https://doi.org/10.18653/v1/2021.acl-long.4
 
 ---
 
