@@ -201,4 +201,4 @@ python common_analysis/qualitative_analysis.py
 
 - All scripts should be run from the repository root
 - Prediction scripts may require GPU or external runtime (e.g., Kaggle)
-- Dataset structure is based on HateCheck-derived samples with multiple relabeling schemes
+- Dataset structure is based on HateCheck-derived samples
