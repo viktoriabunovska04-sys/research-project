@@ -2,9 +2,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.12+-blue)
 
-This repository contains code for analyzing how different hate speech definitions affect model predictions for Flan-T5 and Qwen using the extended HateCheck dataset. It was created as part of the CSE3000 Research Project 2026 at TU Delft.
-
-For more information about the course, see the TU Delft CSE3000 Research Project page: https://github.com/TU-Delft-CSE/Research-Project.
+This repository contains code for analyzing how different hate speech definitions affect model predictions for Flan-T5 and Qwen using the extended HateCheck dataset. It was created as part of the [CSE3000 Research Project 2026]((https://github.com/TU-Delft-CSE/Research-Project)) at [TU Delft](https://github.com/TU-Delft-CSE).
 
 It includes:
 
